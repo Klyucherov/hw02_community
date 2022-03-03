@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import index, group_posts
-from . import views
+from .import views
 
 app_name = 'ice_cream'
 
