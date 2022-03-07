@@ -1,11 +1,11 @@
 {% extends 'base.html'%}
 {% load static %}
-
+{% block title %}Записи сообщества {{title }} {% endblock title %}
 {% block content %}
 
-<h1>{{slug}}</h1>
+<h1>{{group}}</h1>
 <p>
-    {{text}}
+    {{group.description}}
 </p>
 <article>
     {% for post in posts %}
