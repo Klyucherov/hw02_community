@@ -1,28 +1,27 @@
-{% extends 'base.html'%}
-{% load static %}
-{% block title %}Записи сообщества {{title }} {% endblock title %}
+{% extends 'base.html' %}
+{% block title %}Записи сообщества {{ group.slug }} {% endblock title %}
 {% block content %}
 
-<h1>{{group}}</h1>
-<p>
-    {{group.description}}
-</p>
-<article>
-    {% for post in posts %}
-    <ul>
-        <li>
-            Автор: {{ post.author.get_full_name }}
-        </li>
-        <li>
-            Дата публикации: {{ post.pub_date|date:"d E Y" }}
-        </li>
-    </ul>
+    <h1>{{ group.title }}</h1>
     <p>
-        {{ post.text }}
+        {{ group.description }}
     </p>
-    <hr>
-    {% endfor %}
-</article>
+    <article>
+        {% for post in posts %}
+            <ul>
+                <li>
+                    Автор: {{ post.author.get_full_name }}
+                </li>
+                <li>
+                    Дата публикации: {{ post.pub_date|date:"d E Y"}}
+                </li>
+            </ul>
+            <p>
+                {{ post.text }}
+            </p>
+            <hr>
+        {% endfor %}
+    </article>
 
 
 {% endblock %}
